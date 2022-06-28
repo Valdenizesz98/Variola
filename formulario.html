@@ -1,0 +1,58 @@
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="shortcut icon" href="cruz-medica.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>VARÍOLA DO MACACO</h1>
+        <h2>Varíola dos macacos: o que é, sintomas, transmissão, tratamento e prevenção</h2>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="conosco.html">Fale conosco</a>
+        </nav>
+    </header>
+    <main>
+        
+        <h3>Faça parte de nós!</h3>
+
+        <?php
+            if(isset($_SESSION['msg']){
+               echo $_SESSION['msg'];
+               unset ($_SESSION['msg']);
+            }
+        ?>
+
+        <p><strong>OLÁ, espero que esteja bem!</strong></p> 
+        <P>Caso queira ficar recebendo dicas e novidades de nosso site, preencha o campo abaixo: </p>
+
+            <div class = "formu">
+                <form method="post" action="dados.php">
+                    <label><strong>Nome: </strong> </label>
+                    <br>
+                    <input class="caixa" type="text" name="nome" placeholder="Digite seu nome completo">
+                    <br>
+                    <label><strong>E-mail:</strong> </label>
+                    <br>
+                    <input class="caixa" type="email" name="email" placeholder="Digite seu E-mail">
+                    <br>
+                    <input class="butao" type="submit" value="Cadastrar">
+                </form>
+            </div>
+    </main>
+    <footer>
+        <p>Site desenvolvido pelos alunos: Vitoria Medeiros, Valdenize Souza, Palmiston Luzeiro, Witor Assis
+            <br>
+        <strong>Disciplina: Desenvolvimento Web</strong></p>
+    </footer>
+</body>
+</html>
